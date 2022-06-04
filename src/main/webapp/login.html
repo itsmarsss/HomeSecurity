@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="css/login.css">
+<title>Login</title>
+</head>
+<body>
+	<form class="login-form" action="LoginServlet" method="post">
+		<div class="login-form__logo-container">
+			<img class="login-form__logo" src="assets/homesecurity-logo-transparent.png" alt="HomwSecurity Logo">
+		</div>
+		<div class="login-form__content">
+			<div class="login-form__header">Login to your account</div>
+			<input class="login-form__input" type="text" name="hs_username" placeholder="Username">
+			<input class="login-form__input" type="password" name="hs_password" placeholder="Password">
+			<button class="login-form__button" type="submit">Login</button>
+			<div class="login-form__links">
+				<a href="./" class="login-form__link">Recover your password?</a>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
