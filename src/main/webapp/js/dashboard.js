@@ -4,7 +4,6 @@ const closeBtn = document.querySelector("#close-btn");
 
 menuBtn.addEventListener('click', () => {
     sideMenu.style.display = 'block';
-    console.log("hii");
 });
 
 closeBtn.addEventListener('click', () => {

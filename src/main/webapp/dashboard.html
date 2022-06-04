@@ -1,6 +1,17 @@
 <!Doctype html>
 <html lang="en">
 <head>
+<script>
+var xmlHttp = new XMLHttpRequest();
+xmlHttp.open( "GET", 'http://localhost:8081/HomeSecurity/ValidateServlet', false );
+xmlHttp.send(null);
+const response = xmlHttp.responseText;
+console.log(response);
+if(response == "denied"){
+	window.location.href = 'login.html';
+}
+</script>
+
 <title>HomeSecurity Dashboard</title>
 <meta charset="ISO-8859-1">
 <meta http-equiv="XX-UA-Compatible" content="IE-edge">
@@ -31,29 +42,18 @@
 				<a href="#" id="dashboard" class="active"> <span
 					class="material-icons">grid_view</span>
 					<h3>Dashboard</h3>
-				</a> 
-				
-				<a href="alerts.html#" id="alerts"> <span
+				</a> <a href="alerts.html#" id="alerts"> <span
 					class="material-icons">report</span>
 					<h3>Alerts</h3>
-				</a> 
-				
-				<a href="settings.html#" id="settings"> <span
+				</a> <a href="settings.html#" id="settings"> <span
 					class="material-icons">settings</span>
 					<h3>Settings</h3>
-				</a> 
-				
-				<a href="troubleshoot.html#" id="troubleshoot"> <span
+				</a> <a href="troubleshoot.html#" id="troubleshoot"> <span
 					class="material-icons">construction</span>
 					<h3>Trouble Shoot</h3>
-				</a> 
-				
-				<a class="theme-Toggler"> <span
-					class="material-icons">dark_mode</span>
+				</a> <a class="theme-Toggler"> <span class="material-icons">dark_mode</span>
 					<h3>Toggle Mode</h3>
-				</a> 
-				
-				<a href="logout.html#" id="logout"> <span
+				</a> <a href="login.html#" id="logout" onClick="logout()"> <span
 					class="material-icons">logout</span>
 					<h3>Logout</h3>
 				</a>
@@ -207,6 +207,16 @@
 
 
 		<script>
+			function logout() {
+				var xmlHttp = new XMLHttpRequest();
+				xmlHttp.open("POST", 'http://localhost:8081/HomeSecurity/LogoutServlet', false);
+				xmlHttp.send(null);
+				const response = xmlHttp.responseText;
+				console.log(response);
+				if(response == "accepted"){
+					window.location.href = 'login.html';
+				}
+			}
 			function expand(obj, cont) {
 				const cameras = document.getElementsByClassName('camera');
 				for (var i = 0; i < cameras.length; i++) {
