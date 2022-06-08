@@ -1,3 +1,16 @@
+function deviceType() {
+    const ua = navigator.userAgent;
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+        return "tablet";
+    } else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+        return "mobile";
+    }
+    return "desktop";
+
+}
+
+console.log(deviceType());
+
 const sideMenu = document.querySelector("aside");
 const menuBtn = document.querySelector("#menu-btn");
 const closeBtn = document.querySelector("#close-btn");
@@ -69,7 +82,7 @@ themeToggler.addEventListener('click', () => {
 					class="material-icons">light_mode</span>
 					<h3>Toggle Mode</h3>`;
     if (light) {
-      	newInner = `<span
+        newInner = `<span
 					class="material-icons">dark_mode</span>
 					<h3>Toggle Mode</h3>`;
     }

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="XX-UA-Compatible" content="IE-edge">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+
+<link rel="stylesheet" href="./css/dashboard.css">
+<link rel="icon" href="./assets/favicon.png" type="image/x-icon">
+<title>Alerts</title>
+</head>
+<body>
+	<div class="container">
+		<aside>
+
+			<div class="top">
+				<div class="logo">
+					<img src="./assets/logo.png">
+					<h2>
+						Home<span class="primary">Security</span>
+					</h2>
+				</div>
+				<div class="close" id="close-btn">
+					<span class="material-icons">close</span>
+				</div>
+			</div>
+
+			<div class="sidebar">
+				<a href="dashboard.html#" id="dashboard"> <span
+					class="material-icons">grid_view</span>
+					<h3>Dashboard</h3>
+				</a> <a href="#" id="alerts" class="active"> <span
+					class="material-icons">report</span>
+					<h3>Alerts</h3>
+				</a> <a href="settings.html#" id="settings"> <span
+					class="material-icons">settings</span>
+					<h3>Settings</h3>
+				</a> <a href="troubleshoot.html#" id="troubleshoot"> <span
+					class="material-icons">construction</span>
+					<h3>Trouble Shoot</h3>
+				</a> <a class="theme-Toggler"> <span class="material-icons">dark_mode</span>
+					<h3>Toggle Mode</h3>
+				</a> <a href="login.html#" id="logout" onClick="logout()"> <span
+					class="material-icons">logout</span>
+					<h3>Logout</h3>
+				</a>
+			</div>
+		</aside>
+
+		<main>
+
+			<div class="topbar">
+				<span class="material-icons" id="menu-btn">menu</span> <input
+					class="search-box" id="input" type="text" placeholder="Search">
+			</div>
+
+			<h1>Alerts</h1>
+
+			<div class="alert-list">
+				<div class="alerts">
+					<div class="alert" id="Front Door"
+						onClick="expand('Front Door', disconnected)">
+						<h3>
+							<span class="material-icons">blur_on</span>Front Door
+						</h3>
+						<div class="middle">
+							<small>Motion detected on <b>Front Door</b> camera.<br></small>
+							<small class="text-muted">2 mins ago</small>
+						</div>
+					</div>
+
+
+					<div class="alert" id="Back Door"
+						onClick="expand('Back Door', connected)">
+						<h3>
+							<span class="material-icons">noise_aware</span>Back Door
+						</h3>
+						<div class="middle">
+							<small>Audio detected on <b>Back Door</b> camera.<br></small>
+							<small class="text-muted">4 mins ago</small>
+						</div>
+					</div>
+
+
+					<div class="alert" id="Back Door"
+						onClick="expand('Back Door', connected)">
+						<h3>
+							<span class="material-icons">blur_on</span>Back Door
+						</h3>
+						<div class="middle">
+							<small>Motion detected on <b>Back Door</b> camera.<br></small>
+							<small class="text-muted">10 mins ago</small>
+						</div>
+					</div>
+
+
+					<div class="alert" id="Living Room"
+						onClick="expand('Living Room', pending)">
+						<h3>
+							<span class="material-icons">wifi</span>Living Room
+						</h3>
+						<div class="middle">
+							<small>Connection on <b>Living Room</b> camera.<br></small>
+							<small class="text-muted">1 hour ago</small>
+						</div>
+					</div>
+
+
+					<div class="alert" id="Living Room"
+						onClick="expand('Living Room', pending)">
+						<h3>
+							<span class="material-icons">wifi_off</span>Living Room
+						</h3>
+						<div class="middle">
+							<small>Disconnection on <b>Living Room</b> camera.<br></small>
+							<small class="text-muted">2 hour ago</small>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</main>
+	</div>
+</body>
+</html>
